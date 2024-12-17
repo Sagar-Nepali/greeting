@@ -31,34 +31,7 @@
 </head>
 
 <body>
-  <!-- Your HTML content here -->
-  <button id="grantButton">Accept Cookies</button>
-
-  <script>
-    const grantButton = document.getElementById("grantButton");
-
-    grantButton.addEventListener("click", function() {
-      // Save user's consent in localStorage
-      localStorage.setItem("consentGranted", "true");
-
-      // Update consent preferences
-      function gtag() { dataLayer.push(arguments); }
-      gtag('consent', 'update', {
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'ad_storage': 'granted',
-        'analytics_storage': 'granted'
-      });
-
-      // Dynamically load the Google Tag Manager script
-      var gtmScript = document.createElement('script');
-      gtmScript.async = true;
-      gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=G-P0TC8VEX5C'; // Your GTM ID here
-      var firstScript = document.getElementsByTagName('script')[0];
-      firstScript.parentNode.insertBefore(gtmScript, firstScript);
-    });
-  </script>
-
+  <!-- Simple greeting content without button -->
   <main>
     <div class="box">
       <div class="greeting_box">
