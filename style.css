@@ -21,7 +21,7 @@ body, html {
     position: fixed;
 }
 
-.greetig_box {
+.greeting_box {
     width: 50vw;
     height: 30vh;
     border: none;
@@ -31,6 +31,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1em;
 }
 
 .text_box {
@@ -39,15 +40,43 @@ body, html {
     border: none;
     border-radius: 9px;
     text-align: center;
-    font-size: clamp(1.3em, 2vw, 2em); /* Fluid font size */
+    font-size: clamp(1.3em, 5vw, 2em); /* Fluid font size */
+    line-height: 1.4;
+    padding: 1rem;
 }
 
 /* Media Queries */
+
+/* For small screens (mobile devices) */
 @media (max-width: 530px) {
-    .greetig_box {
-        height: 14vh;
+    .greeting_box {
+        height: 20vh; /* Slightly larger for mobile screens */
+        width: 80vw; /* Adjust width for mobile */
     }
     .text_box {
-        height: 68%;
+        height: 60%;
+        font-size: clamp(1em, 4vw, 1.8em); /* Smaller font size for mobile */
+    }
+}
+
+/* For larger tablets or smaller desktops */
+@media (min-width: 531px) and (max-width: 768px) {
+    .greeting_box {
+        height: 25vh;
+        width: 60vw;
+    }
+    .text_box {
+        font-size: clamp(1.1em, 4vw, 1.8em); /* Adjust font size */
+    }
+}
+
+/* For larger desktops */
+@media (min-width: 769px) {
+    .greeting_box {
+        height: 30vh;
+        width: 50vw;
+    }
+    .text_box {
+        font-size: clamp(1.3em, 2vw, 2.2em); /* Larger font size for large screens */
     }
 }
