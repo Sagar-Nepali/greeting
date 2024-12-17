@@ -14,5 +14,5 @@ views++;
 // Store the updated count back in localStorage
 localStorage.setItem('views', views);
 
-// Display the view count in the webpage
-document.getElementById("viewCount").textContent = `This page has been viewed ${views} times.`;
+// Log the view count to the console (for your reference)
+console.log(`This page has been viewed ${views} times.`);
