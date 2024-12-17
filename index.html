@@ -29,27 +29,28 @@
 </script>
 </head>
 <body>
-      grantButton.addEventListener("click", function() {
-    localStorage.setItem("consentGranted", "true");
-    function gtag() { dataLayer.push(arguments); }
+<body>
+  <!-- Your HTML content here -->
+  <button id="grantButton">Accept Cookies</button>
 
-    gtag('consent', 'update', {
-      ad_user_data: 'granted',
-      ad_personalization: 'granted',
-      ad_storage: 'granted',
-      analytics_storage: 'granted'
-    });
-  });
+  <script>
+    const grantButton = document.getElementById("grantButton");
 
-  // Load Tag Manager script.
-  var gtmScript = document.createElement('script');
-  gtmScript.async = true;
-  gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=Container ID';
+    grantButton.addEventListener("click", function() {
+      // Save user's consent in localStorage
+      localStorage.setItem("consentGranted", "true");
 
-  var firstScript = document.getElementsByTagName('script')[0];
-  firstScript.parentNode.insertBefore(gtmScript,firstScript);
+      // Update consent preferences
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
 
-    <button id="grantButton">Accept Cookies</button>
+      // Dynamically load the GTM script
+
 
     <main>
         <div class="box">
