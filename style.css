@@ -1,4 +1,16 @@
-/* Base Styles */
+:root{
+    --background-color: black;
+    --primative-color: white;
+    --background-box: rgba(91, 91, 91, 0.076);
+    --light-color: rgb(255, 255, 255);
+    --dark-color: rgb(0, 0, 0); 
+}
+.lightmode{
+    --background-color: rgba(222, 218, 218, 0.729);
+    --primative-color: black;
+    --background-box:rgba(255, 255, 255, 0.279);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +18,8 @@
 }
 
 body, html {
-    background-color: #000;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--primative-color);
     width: 100%;
     height: 100%;
 }
@@ -26,7 +38,7 @@ body, html {
     height: 30vh;
     border: none;
     border-radius: 16.7px;
-    background-color: rgba(255, 255, 255, 0.076);
+    background-color: var(--background-box);
     position: absolute;
     display: flex;
     justify-content: center;
@@ -43,7 +55,7 @@ body, html {
 }
 
 .note{
-    background-color:rgba(255, 255, 255, 0.076);
+    background-color:var(--background-box);
     position: relative;
     top: 40vh;
     border-radius: 13px;
@@ -51,16 +63,82 @@ body, html {
     text-align: center;
 }
 
-.note h3{
-    color: green;
+.note button{
+    background-color: transparent;
+    color: var(--primative-color);
+    border: none;
+    padding: 12px;
+    border-radius: 13px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.note button:hover{
+    background: -webkit-linear-gradient(right, #814a01, #f00000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+.note button:active{
+    font-weight: bold;
 }
 
 /* Media Queries */
-@media (max-width: 530px) {
+@media (max-width: 590px) {
     .greeting_box {
         height: 14vh;
     }
     .text_box {
         height: 68%;
+        width: 100%;
+    }
+    #theme-mode{
+        color: red;
+        
     }
 }
+
+
+#theme-mode{
+    width: 55px;
+    height: 43.6px;
+    position: relative;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    left: 80%;
+    top: 20px;
+}
+
+#theme-mode svg{
+    width: 50px;
+    height: 39px;
+    border-radius: 40px;
+    fill: var(--primative-color);
+}
+
+/* moon */
+#theme-mode svg:last-child{
+    fill: var(--dark-color);
+}
+
+/* sun */
+#theme-mode svg:first-child{ 
+    fill: var(--dark-color);
+}
+
+
+#theme-mode svg:last-child{
+    display: none;
+}
+
+.lightmode #theme-mode svg:first-child{
+    display: none;
+}
+
+.lightmode #theme-mode svg:last-child{
+    display: block;
+}
+
